@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VehicleController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('vehicles.index');
 });
+
+Route::resource('vehicles', VehicleController::class);
